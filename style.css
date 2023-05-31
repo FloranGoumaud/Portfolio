@@ -1,6 +1,25 @@
 body {
-  width: 100%;
+  font: normal 75% Arial, Helvetica, sans-serif;
+  margin: 0;
   overflow-x: hidden;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
 }
 
 .container {
@@ -29,28 +48,6 @@ body {
   }
 }
 
-.background-gif {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/img/background.gif");
-  background-size: cover;
-  opacity: 0;
-  animation: backgroundAnimation 1s forwards;
-  z-index: -1; /* Ajout de z-index pour placer l'arrière-plan en arrière-plan */
-}
-
-@keyframes backgroundAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .banner {
   width: 100%;
   background-color: transparent;
@@ -63,8 +60,6 @@ body {
 .left-image {
   position: absolute;
   left: 10px;
-  height: auto;
-  max-width: 100%;
 }
 
 .item {
@@ -89,29 +84,55 @@ body {
 
 .button:hover img.image-survol {
   opacity: 1;
-
 }
 
-.accueil,
-.vitrine,
-.apropos,
-.shop {
+.accueil, .vitrine, .apropos, .shop {
   color: white;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 5px;
-  margin-top: -25px;
+  margin: -25px 0 0 5px;
 }
 
+/* Styles pour le bouton "Information" */
+.info-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Styles pour le menu d'informations */
+#info-menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #2C2F33; /* Gris Discord */
+  padding: 30px;
+  padding-left: 25%;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: white; /* Texte en blanc */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 20% 100%, 0 50%);
+  border-radius: 20px 20px 0 0;
+  display: none;
+}
+
+.info-text {
+  margin-left: 65px;
+  margin-top: 25px;
+}
+
+.info-text:last-child {
+  margin-left: 200px;
+}
 
 #contactButton {
-  background-color: #4CAF50; /* Modifier cette couleur selon le style de votre site */
+  background-color: #4CAF50;
   color: white;
-  padding: 22px 48px; /* Augmentation du padding pour agrandir le bouton */
+  padding: 22px 48px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px; /* Augmentation de la taille de police pour un bouton plus grand */
+  font-size: 24px;
   margin: 4px 2px;
   cursor: pointer;
   border: none;
@@ -121,10 +142,10 @@ body {
 }
 
 #contactForm {
-  margin-top: 15px; /* Augmentation de la marge pour accommoder un plus grand bouton */
   position: absolute;
-  top: 350px;
   left: 1300px;
-  width: 50%; /* Vous pouvez changer ceci pour agrandir le formulaire */
-  font-size: 18px; /* Augmentation de la taille de police pour un formulaire plus grand */
+  top: 350px;
+  width: 50%;
+  font-size: 18px;
+  margin-top: 15px;
 }
